@@ -6,3 +6,6 @@ function afficherRech(){
         document.getElementById("form").style.display = "none";
     }
 }
+function reinitForm(){
+    document.getElementById("idvalueform").value="";
+}

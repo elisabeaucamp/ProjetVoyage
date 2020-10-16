@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div>
-                    <a href="pagereservation.html">
+                    <a href="page_reservation.html">
                         <button class="boutonreservation">
                             <h2>                         
                                <img
@@ -49,6 +49,7 @@
                                 width="50px"
                                 height="50px"
                                 alt=Panier
+                                />
                             </h2>
                         </button>
                     </a>
@@ -85,28 +86,46 @@
                     </button>
                 </div>
             <div class="formulaire"id="form">
-                <form id="formulaire" ></form>
+                <form id="formulaire" >
                     <span>Filtres disponibles</span> <br/> <br/>
-                    <span>Date :</span><br/>
-                    <input type="radio" name="dates" ><span>dans une semaine</span>
-                    <input type="radio" name="dates" ><span>dans un mois</span>
-                    <input type="radio" name="dates" ><span>dans un an</span>
+                    <span>Date :</span><br/>                    
+                    <input type="radio" name="dates" id="idvalueform"><span>dans une semaine</span>
+                    <input type="radio" name="dates" id="idvalueform"><span>dans un mois</span>
+                    <input type="radio" name="dates" id="idvalueform"><span>dans un an</span>                    
                     <br/><br/>
                     <span>Budget :</span><br/>
-                    <span>0€</span> <input type="range" name="budget" min="0" max="3000" step="100"> <span>3000€</span>
+                    <span>0€</span> 
+                    <input type="range" name="budget" min="0" max="3000" step="100" id="idvalueform"> 
+                    <span>3000€</span>
                     <br/><br/>
-                    <span>Lieu :</span><br/>
-                    <input type="checkbox" name="lieu" ><span>Europe</span>
-                    <input type="checkbox" name="lieu" ><span>Asie</span>
-                    <input type="checkbox" name="lieu" ><span>Amérique</span>
-                    <input type="checkbox" name="lieu" ><span>Afrique</span>
-                    <input type="checkbox" name="lieu" ><span>Océanie</span>
+                    <span>Lieu :</span><br/>                    
+                    <input type="checkbox" name="lieu" id="idvalueform"><span>Europe</span>
+                    <input type="checkbox" name="lieu" id="idvalueform"><span>Asie</span>
+                    <input type="checkbox" name="lieu" id="idvalueform"><span>Amérique</span>
+                    <input type="checkbox" name="lieu" id="idvalueform"><span>Afrique</span>
+                    <input type="checkbox" name="lieu" id="idvalueform"><span>Océanie</span>                
                     <br/><br/>
-                    <span>XNombre de voyageurs :</span><br/>
-                    <input type="text" name="voyageurs" >
+                    <span>Nombre de voyageurs :</span><br/>
+                    <input type="text" name="voyageurs" id="idvalueform">
                     <br/><br/>
-                    <input type=submit name="soumettre" value="Envoyer le formulaire">
-                    <button class="boutonreinitialiser" type=reset name=réinitialiser value="reset"><span>Réinitialiser</span></button>
+                    <button type="submit" name="soumettre" value="Envoyer le formulaire" class="boutonsoumettre">
+                        <img
+                        src="../Images/envoi.png"
+                        width="20"
+                        height="20"
+                        text-align=center
+                        alt=Soumettre
+                        />
+                    </button>
+                    <button class="boutonreinitialiser" onclick="reinitForm()">
+                        <img
+                        src="../Images/recharger.png"
+                        width="20"
+                        height="20"
+                        text-align=center
+                        alt=Reinitialiser
+                        />
+                    </button>
                 </form>
             </div>
                 </br>
