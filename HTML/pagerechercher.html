@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>e-line : rechercher</title>
+    </head>
+    <body>
+        <form action="/pagerechercher.php" method="POST"></form>
+            Filtres disponibles <br/> <br/>
+            Date :<br/>
+            <input type="radio" name="dates" >dans une semaine
+            <input type="radio" name="dates" >dans un mois
+            <input type="radio" name="dates" >dans un an
+            <br/><br/>
+            Budget :<br/>
+            0€ <input type="range" name="budget" min="0" max="3000" step="100"> 3000€
+            <br/><br/>
+            Lieu :<br/>
+            <input type="checkbox" name="lieu" >Europe
+            <input type="checkbox" name="lieu" >Asie
+            <input type="checkbox" name="lieu" >Amérique
+            <input type="checkbox" name="lieu" >Afrique
+            <input type="checkbox" name="lieu" >Océanie
+            <br/><br/>
+            Nombre de voyageurs :<br/>
+            <input type="text" name="voyageurs" >
+            <br/><br/>
+            <input type=submit name="soumettre" value="Envoyer le formulaire">
+            <button type=reset name=réinitialiser value="reset">Réinitialiser</button>
+        </form>
+    </body>

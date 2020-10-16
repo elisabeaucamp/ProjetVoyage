@@ -1,0 +1,100 @@
+body{
+    background-color: rgb(94,92,228);
+}
+
+div.grid-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: rgb(94,92,228);
+    padding : 10px;
+}
+div.menu{
+    background-color:none;
+    font-size: 80%;
+    color : rgb(255,255,255);
+    display:grid;
+    grid-template-rows : auto auto auto auto; 
+}
+a:link, a:visited {
+    background-color : white;
+    color : rgb(94,92,228);
+    text-align: center;
+    display : inline-block
+}
+a:hover, a:active {
+    background-color: white;
+}
+div.titre {
+    text-align: center;
+    color : rgb(94,92,228);
+    background:rgb(255,255,255) ;
+    padding : auto ;
+    border : 10px solid ; 
+    border-color : rgb(255,255,255);
+}
+div.rechercher{
+    font-size: 80%;
+    float : center;
+}
+.boutonrechercher{
+    float : right;
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(94,92,228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutoncontact{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(94,92,228);
+    border-radius : 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonreservation{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(94,92,228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonpanier{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(94,92,228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+div.img{
+    text-align: center;
+}
+div.cassetete{
+    background-color:none;
+}
+div.formulaire{
+    text-align: left;
+    color: rgb(94,92,228);
+    font-size: 120%;
+    padding-top: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255,255,255);
+    background-color: rgb(255,255,255);
+    display: none;
+}
+.boutonreinitialiser{
+    background-color: white;
+    color : rgb(94,92,228);
+}
