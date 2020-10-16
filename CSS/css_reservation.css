@@ -1,0 +1,33 @@
+h1,#p01,p.sst,p.legend {
+    color: rgb(255, 255, 255);
+    font-size: 300%;
+    text-align: center;
+}
+#p01 {
+    font-size: 200%;
+}
+p.legend {
+    font-size: 140%;
+}
+p.sst {
+    font-size: 90%;
+    text-align: left;
+}
+
+body {
+    background-image: url("../Projet-info/imagefond.jpg");
+    background-size: cover;
+    background-size: contain;
+    background-size: 120%;
+}
+
+div {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 1%; 
+    padding: 2% ;
+    padding-top: 1%;
+    border: 3px solid orange;border-radius: 1%;
+    display: inline-block;
+    vertical-align: top;
+}
+
