@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset ="UTF-8">
-    <title>Page_de_reservation</title>
-    <link href="../CSS/css_reservation.css" rel="stylesheet" type="text/css">
-</head>
+   <head>
+      <meta charset ="UTF-8">
+      <title>Page_de_reservation</title>
+      <link href="../CSS/css_reservation.css" rel="stylesheet" type="text/css">
+   </head>
 
-<body>
-    <h1>Page de réservation</h1> 
-    <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances de rêves !</p>
-    <form action="/page_reservation.html" method="GET" autocomplete="on">
+   <body>
+      <form action="/page_reservation.html" method="GET" autocomplete="on"></form>
+            
+         <div> 
+            <h1>Page de réservation</h1> 
+            <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances de rêves !</p>
+         </div>
+      
+         
+         <div class="grid-container">
+            
+            <div class="bloc">
+               <p class="legend">Prix</p>
+               <input type="number" name="fname" readonly><br>
+            </div>
 
- <div>
-    <p class="legend">Identité</p>
-    <p class="sst">Nom :</p>
-    <input type="text" name="lastname" autofocus required><br><br/>
-    <p class="sst">Prénom :</p>
-    <input type="text" name="firstname" required><br><br/>
-    <p class="sst">Adresse mail :</p>
-    <input type="email" name="email" placeholder="username@mail.com" required><br><br/>
-    <p class="sst">Numéro de télephone :</p>
-    <input type="text" name="tel" inputmode="tel" maxlength="15" size="10" placeholder="06 00 00 00 00"><br/>
-    <br/>
- </div>
-
- <div>
-    <p class="legend">Voyage</p>
-    <p class="sst">Date de départ :</p>
-    <input type="date" name="datedepart" required><br><br/>
-    <p class="sst">Date d'arrivée :</p>
-    <input type="date" name="datearrivee" required><br><br/>
-    <p class="sst">Nombre d'adultes :</p>
-    <input type="text" name="nbadulte" required><br><br/>
-    <p class="sst">Nombre d'enfants (-12 ans) :</p>
-    <input type="text" name="nbenfant" required><br><br/>
-    <p class="sst">Petit déjeuner :</p>
-    <input type="checkbox" name="ptitdejY"><br>
-    <br/>
- </div>
- <div>
-    <p class="legend">Renseignement</p>
-    <textarea></textarea><br>
-    <br/>
- </div> 
-
- <div> 
-    <p class="legend">Confirmation</p>
-    <button type=submit name="submit">Valider</button>
-    <button type="reset" name="suppr" value="Reset">Supprimer</button><br><br/>
-    <br/>
- </div>
-
- <div>
-    <p class="legend">Prix</p>
-    <input type="number" name="fname" readonly><br>
- </div>
+            <div class="bloc">
+               <p class="legend">Identité</p>
+               <p class="sst">Nom :</p>
+               <input type="text" name="lastname" autofocus required><br><br/>
+               <p class="sst">Prénom :</p>
+               <input type="text" name="firstname" required><br><br/>
+               <p class="sst">Adresse mail :</p>
+               <input type="email" name="email" placeholder="username@mail.com" required><br><br/>
+               <p class="sst">Numéro de télephone :</p>
+               <input type="text" name="tel" inputmode="tel" maxlength="15" size="10" placeholder="06 00 00 00 00"><br/>
+               <br/>
+            </div>
 
 
- </form>
-</body>
+            <div class="bloc">
+               <p class="legend">Voyage</p>
+               <p class="sst">Date de départ :</p>
+               <input type="date" name="datedepart" required><br><br/>
+               <p class="sst">Date d'arrivée :</p>
+               <input type="date" name="datearrivee" required><br><br/>
+               <p class="sst">Nombre d'adultes :</p>
+               <input type="text" name="nbadulte" required><br><br/>
+               <p class="sst">Nombre d'enfants (-12 ans) :</p>
+               <input type="text" name="nbenfant" required><br><br/>
+               <p class="sst">Petit déjeuner :</p>
+               <input type="checkbox" name="ptitdejY"><br>
+               <br/>
+            </div>
+
+            <div class="bloc">
+               <p class="legend">Renseignement</p>
+               <textarea></textarea><br>
+               <br/>
+               <p class="legend">Confirmation</p>
+               <button type=submit name="submit">Valider</button>
+               <button type="reset" name="suppr" value="Reset">Supprimer</button><br><br/>
+               <br/>
+            </div>
+         </div>
+      </form>
+   </body>
 </html>
