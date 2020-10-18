@@ -7,5 +7,5 @@ function afficherRech(){
     }
 }
 function reinitForm(){
-    document.getElementById("idvalueform").value="";
+    document.getElementById("idvalueform").clear();
 }

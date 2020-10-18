@@ -15,12 +15,6 @@ div.menu{
     display:grid;
     grid-template-rows : repeat(3,1fr); 
 }
-a:link, a:visited {
-    background-color : white;
-    color : rgb(94,92,228);
-    text-align: center;
-    display : inline-block
-}
 div.titre {
     text-align: center;
     color : rgb(94,92,228);
@@ -112,6 +106,7 @@ div.formulaire{
 .boutonrechercher:hover{
     width: 85px;
     height : 85px;
+    image-orientation: flip;
 }
 .boutoncontact:hover{
     width: 85px;
