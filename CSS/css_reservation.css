@@ -1,9 +1,9 @@
-h1,#p01,p.sst,p.legend {
+h1,#p01,#p02,p.sst,p.legend {
     color: rgb(255, 255, 255);
     font-size: 300%;
     text-align: center;
 }
-#p01 {
+#p01,#p02 {
     font-size: 200%;
 }
 p.legend {

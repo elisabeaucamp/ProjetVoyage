@@ -4,15 +4,14 @@
         <meta charset="UTF-8">
         <title>e-line</title>
         <link rel="stylesheet" href="../CSS/pagedaccueil.css">
-        <script src="../JS/pagedaccueil.js"></script>
     </head>
     <body>
         <h1>
-            <div class="titre">e-line vacances, réservez vos vacances en un clic</div>
+            <div class="titre" id="titre" onclick = test_function()>e-line vacances, réservez vos vacances en un clic</div>
         </h1>
         <div class="grid-container">
             <div class="menu">
-                <div class="cassetete">
+                <div class="lien">
                     <a href="pagecontact.html">
                     <button class="boutoncontact">
                         <h2>
@@ -20,27 +19,23 @@
                             src="../Images/mail.png"
                             width="50px"
                             height="50px"
-                            alt=Mail
+                            alt="Mail"
                             />
                         </h2>
                     </button>
-                    </a>
-                </div>
-                <div>
-                    <a href="page_reservation.html">
+                    </a><br/><br/>   
+                    <a href="page_reservation.html" >
                         <button class="boutonreservation">
                             <h2>                         
-                               <img
-                               src="../Images/validation.png"
-                               width="50px"
-                               height="50px"
-                               alt=Validation
-                               />
+                            <img
+                            src="../Images/validation.png"
+                            width="50px"
+                            height="50px"
+                            alt="Validation"
+                            />
                             </h2>
                         </button>
-                    </a>
-                </div>
-                <div>
+                    </a><br/><br/>
                     <a href="pagepanier.html">
                         <button class="boutonpanier">
                             <h2>
@@ -48,30 +43,30 @@
                                 src="../Images/panier.gif"
                                 width="50px"
                                 height="50px"
-                                alt=Panier
+                                alt="Panier"
                                 />
                             </h2>
                         </button>
                     </a>
                 </div>            
             </div>
-                <div class=img>
-                    <img 
-                    src="../Images/EU.png"
-                    width=375
-                    height=211
-                    alt= Etats-Unis
-                    />
-                    </br><span>Etats-Unis</span><br/>
-                    <img
-                    src="../Images/DAN.jpg"
-                    width=375
-                    height=211
-                    alt= Danemark
-                    />
-                    </br>
-                    <span>Danemark</span>
-                </div>
+            <div class="img" id="idimages">
+                <template id="listedestination">
+                    <div>
+                    <a href="page_reservation.html?id={{numero}}" id="vDAN">
+                        <img
+                        src="{{image}}"
+                        width="{{largeur}}"
+                        height="{{hauteur}}"
+                        alt= "{{pays}}"
+                        />
+                        <br/>
+                        <span>{{pays}}</span>
+                        </br>
+                    </a>
+                    </div>
+                </template>                        
+            </div>
             <div class="rechercher">
                 <div>
                     <button  class="boutonrechercher" onclick="afficherRech()">
@@ -80,56 +75,57 @@
                             src="../Images/loupe.jpg"
                             width="50px"
                             height="50px"
-                            alt=Loupe
+                            alt="Loupe"
                             />
                         </h2>
                     </button>
                 </div>
-            <div class="formulaire"id="form">
-                <form id="formulaire" >
-                    <span>Filtres disponibles</span> <br/> <br/>
-                    <span>Date :</span><br/>                    
-                    <input type="radio" name="dates" id="idvalueform"><span>dans une semaine</span>
-                    <input type="radio" name="dates" id="idvalueform"><span>dans un mois</span>
-                    <input type="radio" name="dates" id="idvalueform"><span>dans un an</span>                    
-                    <br/><br/>
-                    <span>Budget :</span><br/>
-                    <span>0€</span> 
-                    <input type="range" name="budget" min="0" max="3000" step="100" id="idvalueform"> 
-                    <span>3000€</span>
-                    <br/><br/>
-                    <span>Lieu :</span><br/>                    
-                    <input type="checkbox" name="lieu" id="idvalueform"><span>Europe</span>
-                    <input type="checkbox" name="lieu" id="idvalueform"><span>Asie</span>
-                    <input type="checkbox" name="lieu" id="idvalueform"><span>Amérique</span>
-                    <input type="checkbox" name="lieu" id="idvalueform"><span>Afrique</span>
-                    <input type="checkbox" name="lieu" id="idvalueform"><span>Océanie</span>                
-                    <br/><br/>
-                    <span>Nombre de voyageurs :</span><br/>
-                    <input type="text" name="voyageurs" id="idvalueform">
-                    <br/><br/>
-                    <button type="submit" name="soumettre" value="Envoyer le formulaire" class="boutonsoumettre">
-                        <img
-                        src="../Images/envoi.png"
-                        width="20"
-                        height="20"
-                        text-align=center
-                        alt=Soumettre
-                        />
-                    </button>
-                    <button class="boutonreinitialiser" onclick="reinitForm()">
-                        <img
-                        src="../Images/recharger.png"
-                        width="20"
-                        height="20"
-                        text-align=center
-                        alt=Reinitialiser
-                        />
-                    </button>
-                </form>
-            </div>
-                </br>
+                <div class="formulaire"id="form">
+                    <form id="formulaire" >
+                        <span>Filtres disponibles</span> <br/> <br/>
+                        <span>Date :</span><br/>                    
+                        <input type="radio" name="dates" id="idvalueform"><span>dans une semaine</span>
+                        <input type="radio" name="dates" id="idvalueform"><span>dans un mois</span>
+                        <input type="radio" name="dates" id="idvalueform"><span>dans un an</span>                    
+                        <br/><br/>
+                        <span>Budget :</span><br/>
+                        <span>0€</span> 
+                        <input type="range" name="budget" min="0" max="3000" step="100" id="idvalueform"> 
+                        <span>3000€</span>
+                        <br/><br/>
+                        <span>Lieu :</span><br/>                    
+                        <input type="checkbox" name="lieu" id="idvalueform"><span>Europe</span>
+                        <input type="checkbox" name="lieu" id="idvalueform"><span>Asie</span>
+                        <input type="checkbox" name="lieu" id="idvalueform"><span>Amérique</span>
+                        <input type="checkbox" name="lieu" id="idvalueform"><span>Afrique</span>
+                        <input type="checkbox" name="lieu" id="idvalueform"><span>Océanie</span>                
+                        <br/><br/>
+                        <span>Nombre de voyageurs :</span><br/>
+                        <input type="text" name="voyageurs" id="idvalueform">
+                        <br/><br/>
+                        <button type="submit" name="soumettre" value="Envoyer le formulaire" class="boutonsoumettre">
+                            <img
+                            src="../Images/envoi.png"
+                            width="20"
+                            height="20"
+                            text-align=center
+                            alt="Soumettre"
+                            />
+                        </button>
+                        <button class="boutonreinitialiser" onclick="reinitForm()">
+                            <img
+                            src="../Images/recharger.png"
+                            width="20"
+                            height="20"
+                            text-align=center
+                            alt="Reinitialiser"
+                            />
+                        </button>
+                    </form>
+                </div>
+                    </br>
             </div>
         </div>
     </body>
+    <script src="../JS/pagedaccueil.js"></script>
     </html>
