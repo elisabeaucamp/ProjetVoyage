@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <title>e-line</title>
         <link rel="stylesheet" href="../CSS/pagedaccueil.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body>
-        <h1>
-            <div class="titre" id="titre" onclick = test_function()>e-line vacances, réservez vos vacances en un clic</div>
+    <body onload="function_none()">
+        <h1 id="top">
+            <div class="titre" id="titre" onclick = "test_function()">e-line vacances, réservez vos vacances en un clic</div>
         </h1>
+        <div id="retour"><a href="#top"></a></div>
         <div class="grid-container">
             <div class="menu">
                 <div class="lien">
@@ -50,22 +52,23 @@
                     </a>
                 </div>            
             </div>
-            <div class="img" id="idimages">
-                <template id="listedestination">
-                    <div>
-                    <a href="page_reservation.html?id={{numero}}" id="vDAN">
+            <div class="destinations" id="idimages">
+                <template id="listedestinations">
+                    <div class="img">
+                    <a href="page_reservation.html?id={{numero}}">
                         <img
                         src="{{image}}"
                         width="{{largeur}}"
                         height="{{hauteur}}"
                         alt= "{{pays}}"
                         />
-                        <br/>
-                        <span>{{pays}}</span>
-                        </br>
-                    </a>
+                        <div class="panneau">
+                            <div class="txtpanneau"><span>{{pays}}</span></div>
+                        </div>
+                    </a><br/><br/><br/>  
                     </div>
-                </template>                        
+                </template>
+                                      
             </div>
             <div class="rechercher">
                 <div>
@@ -82,49 +85,31 @@
                 </div>
                 <div class="formulaire"id="form">
                     <form id="formulaire" >
-                        <span>Filtres disponibles</span> <br/> <br/>
-                        <span>Date :</span><br/>                    
-                        <input type="radio" name="dates" id="idvalueform"><span>dans une semaine</span>
-                        <input type="radio" name="dates" id="idvalueform"><span>dans un mois</span>
-                        <input type="radio" name="dates" id="idvalueform"><span>dans un an</span>                    
-                        <br/><br/>
-                        <span>Budget :</span><br/>
-                        <span>0€</span> 
-                        <input type="range" name="budget" min="0" max="3000" step="100" id="idvalueform"> 
-                        <span>3000€</span>
-                        <br/><br/>
-                        <span>Lieu :</span><br/>                    
-                        <input type="checkbox" name="lieu" id="idvalueform"><span>Europe</span>
-                        <input type="checkbox" name="lieu" id="idvalueform"><span>Asie</span>
-                        <input type="checkbox" name="lieu" id="idvalueform"><span>Amérique</span>
-                        <input type="checkbox" name="lieu" id="idvalueform"><span>Afrique</span>
-                        <input type="checkbox" name="lieu" id="idvalueform"><span>Océanie</span>                
-                        <br/><br/>
-                        <span>Nombre de voyageurs :</span><br/>
-                        <input type="text" name="voyageurs" id="idvalueform">
-                        <br/><br/>
-                        <button type="submit" name="soumettre" value="Envoyer le formulaire" class="boutonsoumettre">
-                            <img
-                            src="../Images/envoi.png"
-                            width="20"
-                            height="20"
-                            text-align=center
-                            alt="Soumettre"
-                            />
-                        </button>
-                        <button class="boutonreinitialiser" onclick="reinitForm()">
-                            <img
-                            src="../Images/recharger.png"
-                            width="20"
-                            height="20"
-                            text-align=center
-                            alt="Reinitialiser"
-                            />
-                        </button>
+                        <span>Filtres disponibles</span> <br/> <br/>  
+                        <template id="listeformulaire">
+                            <div>
+                                             
+                                <input type="{{type}}" name="{{nom}}" id="{{id}}"><span>{{ref}}</span>                   
+                                <br/><br/>
+                            </div>
+                        </template>
                     </form>
                 </div>
                     </br>
+                <div class="boutonhaut" id="boutonhaut" onclick="function_top()">
+                    <img
+                    src="../Images/haut.png"
+                    alt="retour en haut de la page"
+                    width="50"
+                    height="50"
+                    />
+                </div>
             </div>
+        </div>
+        <div class="footer">
+        <footer>
+            <span>Elisa Beaucamp et Amandine Piccinali</span>
+        </footer>
         </div>
     </body>
     <script src="../JS/pagedaccueil.js"></script>

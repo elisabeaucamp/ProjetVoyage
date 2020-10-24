@@ -1,4 +1,4 @@
-var voyages = [
+var destinations = [
     {
         "pays" : "Etats-Unis",
         "prix1": 600,
@@ -16,7 +16,7 @@ var voyages = [
         "numero":1
     },
     {
-        "pays" : "CAN",
+        "pays" : "Canada",
         "prix1": 500,
         "image":"../Images/CAN.jpg",
         "hauteur" : 211,
@@ -24,7 +24,7 @@ var voyages = [
         "numero":2
     },
     {
-        "pays" : "JAP",
+        "pays" : "Japon",
         "prix1": 650,
         "image": "../Images/JAP.jpg",
         "hauteur" : 211,
@@ -33,8 +33,8 @@ var voyages = [
     },
 ];
 
-var template = document.querySelector("#listedestination");
-for (const v of voyages){
+var template = document.querySelector("#listedestinations");
+for (const v of destinations){
     let clone = document.importNode(template.content, true);
     newContent = clone.firstElementChild.innerHTML
         .replace(/{{image}}/g, v.image)
@@ -45,6 +45,83 @@ for (const v of voyages){
 
     clone.firstElementChild.innerHTML=newContent;
     document.getElementById("idimages").appendChild(clone);   
+}
+
+var formulaire =[
+    {
+        "type":"radio",
+        "nom":"Date",
+        "id":"idvalueform",
+        "ref":"Dans une semaine"                   
+    },
+    {
+        "type":"radio",
+        "nom":"Date",
+        "id":"idvalueform",
+        "ref":"Dans un mois"            
+    },
+    {
+        "type":"radio",
+        "nom":"Date",
+        "id":"idvalueform",
+        "ref":"Dans un an",            
+    },
+    {
+        "type":"range",
+        "nom":"Budget",
+        "id": "idvalueform",
+        "ref":"budget",
+    },
+    {
+        "type":"checkbox",
+        "nom":"lieu",
+        "id":"idvalueform",
+        "ref":"Europe",
+    },
+    {
+        "type":"checkbox",
+        "nom":"lieu",
+        "id":"idvalueform",
+        "ref":"Asie",
+    },
+    {
+        "type":"checkbox",
+        "nom":"lieu",
+        "id":"idvalueform",
+        "ref":"Amérique",
+    },
+    {
+        "type":"checkbox",
+        "nom":"lieu",
+        "id":"idvalueform",
+        "ref":"Afrique",
+    },
+    {
+        "type":"checkbox",
+        "nom":"lieu",
+        "id":"idvalueform",
+        "ref":"Océanie",
+    },
+    {
+        "type":"text",
+        "nom":"voyageurs",
+        "id":"idvalueform",
+        "ref":"Nombre de voyageurs",
+    },
+
+]
+
+var template = document.querySelector("#listeformulaire");
+for (const v of formulaire){
+    let clone = document.importNode(template.content, true);
+    newContent = clone.firstElementChild.innerHTML
+        .replace(/{{type}}/g, v.type)
+        .replace(/{{nom}}/g, v.nom)
+        .replace(/{{id}}/g, v.id)
+        .replace(/{{ref}}/g, v.ref)
+
+    clone.firstElementChild.innerHTML=newContent;
+    document.getElementById("form").appendChild(clone);   
 }
 
 function test_function(){
@@ -63,6 +140,26 @@ function afficherRech(){
         document.getElementById("form").style.display = "none";
     }
 }
+
 function reinitForm(){
     document.getElementById("idvalueform").value="";
+}
+
+window.onscroll = function() {function_scrolldown()};
+
+function function_scrolldown(){ //apparition ou non du bouton retour haut
+    if(document.documentElement.scrollTop > 100){
+        document.getElementById("boutonhaut").style.display = "block";
+    }
+    else{
+        document.getElementById("boutonhaut").style.display ="none";
+    }
+}
+
+function function_none(){ //empêcher le bouton haut d'apparaitre au chargement de la page
+    document.getElementById("boutonhaut").style.display="none";
+}
+
+function function_top(){ //retour haut de page
+    document.documentElement.scrollTop=0;
 }
