@@ -125,7 +125,15 @@ for (const v of formulaire){
 }
 
 function test_function(){
-    document.getElementById("titre").innerHTML="Site de voyage";
+    n=0
+    if (n%2==0){
+        document.getElementById("titre").innerHTML="Site de voyage";
+        n=n+1;
+    }
+    else{
+        document.getElementById("titre").innerHTML="e-line vacances, réservez vos vacances en un clic ";
+        n=n+1;   
+    } 
 }
 
 function v_function(){
