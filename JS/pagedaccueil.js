@@ -136,10 +136,6 @@ function test_function(){
     } 
 }
 
-function v_function(){
-    document.getElementById("p02").innerHTML=voyages[1].pays;
-}
-
 function afficherRech(){
     if (document.getElementById("form").style.display == "none"){
        document.getElementById("form").style.display = "block"; 
