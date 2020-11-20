@@ -5,21 +5,20 @@
       <meta charset ="UTF-8">
       <title>Page_de_reservation</title>
       <link href="../CSS/css_reservation.css" rel="stylesheet" type="text/css">
+      <script src="../JS/page_reservation.js"></script>
    </head>
 
-   <body>
-      <form action="page_reservation.html" method="GET" autocomplete="on">
-            
+   <body onload="getDonne()">
+      <form action="page_reservation.html" method="GET" autocomplete="on">    
          <div> 
             <h1>Page de réservation</h1> 
-            <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances</p>
-            <p id=p02>de rêves !</p>
+            <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances ! </p>
+            <p id=p02></p>
          </div>
-      
          
          <div class="grid-container">
             
-            <div class="bloc">
+            <div class="bloc">  
                <p class="legend">Prix</p>
                <input type="number" name="fname" readonly><br>
             </div>
@@ -58,8 +57,8 @@
                <textarea></textarea><br>
                <br/>
                <p class="legend">Confirmation</p>
-               <input type=submit name="submit">Valider<input/>
-               <button type="reset" name="suppr" value="Reset">Supprimer</button><br><br/>
+               <input type=submit name="submit">
+               <input type="reset" name="suppr"><br><br/>
                <br/>
             </div>
          </div>
