@@ -8,7 +8,7 @@
       <script src="../JS/page_reservation.js"></script>
    </head>
 
-   <body onload="getDonne()">
+   <body onload="getDonne() ; Affichprix()">
       <form action="page_reservation.html" method="GET" autocomplete="on">    
          <div> 
             <h1>Page de réservation</h1> 
@@ -19,8 +19,9 @@
          <div class="grid-container">
             
             <div class="bloc">  
-               <p class="legend">Prix</p>
-               <input type="number" name="fname" readonly><br>
+               <p class="legend">Prix</p></br>
+               <p id=p03></p>
+               <p id=p04>euros</p>
             </div>
 
             <div class="bloc">
@@ -38,13 +39,28 @@
 
 
             <div class="bloc">
-               <p class="legend">Voyage</p>
+            <p class="legend">Voyage</p>   
+               <!-- 
                <p class="sst">Date de départ :</p>
                <input type="date" name="datedepart" required><br><br/>
-               <p class="sst">Date d'arrivée :</p>
+                <p class="sst">Date d'arrivée :</p>
                <input type="date" name="datearrivee" required><br><br/>
+               -->
+
+               <template id="listeblocs">
+                  <div>
+                  <!--   <p class="sst">{{sst}}</p> -->
+                     <input type="{{type}}" name="{{name}}" required>
+                  </div>
+                  
+               </template>
+
+               
+              
+
                <p class="sst">Nombre d'adultes :</p>
                <input type="text" name="nbadulte" required><br><br/>
+
                <p class="sst">Nombre d'enfants (-12 ans) :</p>
                <input type="text" name="nbenfant" required><br><br/>
                <p class="sst">Petit déjeuner :</p>

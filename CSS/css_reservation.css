@@ -1,4 +1,4 @@
-h1,#p01,#p02,p.sst,p.legend {
+h1,#p01,#p02,p.sst,p.legend, #p03, #p04 {
     color: rgb(255, 255, 255);
     font-size: 300%;
     text-align: center;
@@ -6,7 +6,7 @@ h1,#p01,#p02,p.sst,p.legend {
 #p01,#p02 {
     font-size: 200%;
 }
-p.legend {
+p.legend, #p03, #p04 {
     font-size: 140%;
 }
 p.sst {
