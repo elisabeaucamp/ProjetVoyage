@@ -68,11 +68,11 @@ div.rechercher{
 
 .destinations{
     align-items: center;
-    background-color: seagreen;
+    /*background-color: seagreen;*/
 }
 
 div.img{
-    background-color: orange;
+    /*background-color: orange;*/
     position:relative;
     display:flex;
     justify-content: center;

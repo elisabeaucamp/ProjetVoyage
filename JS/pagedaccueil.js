@@ -3,33 +3,37 @@ var destinations = [
         "pays" : "Etats-Unis",
         "prix1": 600,
         "image":"../Images/EU.png",
-        "hauteur" : 211,
-        "largeur" : 375,
-        "numero":0
+        "hauteur" : 275,
+        "largeur" : 500,
+        "numero":0,
+        "continent": "Amérique"
     },
     {
         "pays" : "Danemark",
         "prix1": 300,
         "image":"../Images/DAN.jpg",
-        "hauteur" : 211,
-        "largeur" : 375,
-        "numero":1
+        "hauteur" : 275,
+        "largeur" : 500,
+        "numero":1,
+        "continent":"Europe"
     },
     {
         "pays" : "Canada",
         "prix1": 500,
         "image":"../Images/CAN.jpg",
-        "hauteur" : 211,
-        "largeur" : 375,
-        "numero":2
+        "hauteur" : 275,
+        "largeur" : 500,
+        "numero":2,
+        "continent":"Amérique"
     },
     {
         "pays" : "Japon",
         "prix1": 650,
         "image": "../Images/JAP.jpg",
-        "hauteur" : 211,
-        "largeur" : 375,
-        "numero":3
+        "hauteur" : 275,
+        "largeur" : 500,
+        "numero":3,
+        "continent":"Asie"
     },
 ];
 
@@ -75,40 +79,33 @@ var formulaire =[
     {
         "type":"checkbox",
         "nom":"lieu",
-        "id":"idvalueform",
+        "id":"idvalueformlieu",
         "ref":"Europe",
     },
     {
         "type":"checkbox",
         "nom":"lieu",
-        "id":"idvalueform",
+        "id":"idvalueformlieu",
         "ref":"Asie",
     },
     {
         "type":"checkbox",
         "nom":"lieu",
-        "id":"idvalueform",
+        "id":"idvalueformlieu",
         "ref":"Amérique",
     },
     {
         "type":"checkbox",
         "nom":"lieu",
-        "id":"idvalueform",
+        "id":"idvalueformlieu",
         "ref":"Afrique",
     },
     {
         "type":"checkbox",
         "nom":"lieu",
-        "id":"idvalueform",
+        "id":"idvalueformlieu",
         "ref":"Océanie",
     },
-    {
-        "type":"text",
-        "nom":"voyageurs",
-        "id":"idvalueform",
-        "ref":"Nombre de voyageurs",
-    },
-
 ]
 
 var template = document.querySelector("#listeformulaire");
@@ -124,7 +121,7 @@ for (const v of formulaire){
     document.getElementById("form").appendChild(clone);   
 }
 
-function test_function(){
+function test_function(){ //fonction à enlever
     n=0
     if (n%2==0){
         document.getElementById("titre").innerHTML="Site de voyage";
@@ -136,7 +133,7 @@ function test_function(){
     } 
 }
 
-function afficherRech(){
+function afficherRech(){ //fonction qui affiche ou non les filtres
     if (document.getElementById("form").style.display == "none"){
        document.getElementById("form").style.display = "block"; 
     }
@@ -145,11 +142,28 @@ function afficherRech(){
     }
 }
 
-function reinitForm(){
-    document.getElementById("idvalueform").value="";
+function filtrage(){ //filtrer les images sur la page d'accueil
+    for (var f of formulaire){ //f parcourt la liste formulaire
+        if(document.getElementById(f.id).checked == true){ //si la case est check
+            var lieu = f.ref //on récupère le continent associé à la case
+            for (var d of destinations){ //d parcourt la liste destinations
+                if (d.continent == lieu){ //si la destination est identitique à la case checkée
+                    document.getElementById(d.numero).style.display = "block"; //l'image s'affiche
+                }           
+            }
+        }
+        if(document.getElementById(f.id).checked == false){
+            var lieu = f.ref
+            for (var d of destinations){
+                if (d.continent == lieu){
+                    document.getElementById(d.numero).style.display = "none";
+                }           
+            }
+        }
+    }
 }
 
-window.onscroll = function() {function_scrolldown()};
+window.onscroll = function() {function_scrolldown()}; //afficher le bouton quand on est trop bas
 
 function function_scrolldown(){ //apparition ou non du bouton retour haut
     if(document.documentElement.scrollTop > 100){

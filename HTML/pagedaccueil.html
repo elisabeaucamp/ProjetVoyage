@@ -57,6 +57,7 @@
                     <div class="img">
                     <a href="page_reservation.html?id={{numero}}">
                         <img
+                        id = "{{numero}}"
                         src="{{image}}"
                         width="{{largeur}}"
                         height="{{hauteur}}"
@@ -65,7 +66,7 @@
                         <div class="panneau">
                             <div class="txtpanneau"><span>{{pays}}</span></div>
                         </div>
-                    </a><br/><br/><br/>  
+                    </a>
                     </div>
                 </template>
                                       
@@ -88,7 +89,7 @@
                         <span>Filtres disponibles</span> <br/> <br/>  
                         <template id="listeformulaire">
                             <div>                                             
-                                <input type="{{type}}" name="{{nom}}" id="{{id}}"><span>{{ref}}</span>                   
+                                <input type="{{type}}" name="{{nom}}" id="{{id}}" onchange = "filtrage()"><span>{{ref}}</span>                   
                                 <br/><br/>
                             </div>
                         </template>
