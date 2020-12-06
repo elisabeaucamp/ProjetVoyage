@@ -122,15 +122,7 @@ for (const v of formulaire){
 }
 
 function test_function(){ //fonction à enlever
-    n=0
-    if (n%2==0){
-        document.getElementById("titre").innerHTML="Site de voyage";
-        n=n+1;
-    }
-    else{
-        document.getElementById("titre").innerHTML="e-line vacances, réservez vos vacances en un clic ";
-        n=n+1;   
-    } 
+    document.getElementById("titre").innerHTML="Site de voyage";     
 }
 
 function afficherRech(){ //fonction qui affiche ou non les filtres
@@ -142,23 +134,56 @@ function afficherRech(){ //fonction qui affiche ou non les filtres
     }
 }
 
+function cochage(){ //pour afficher toutes les destinations si aucune case filtre n'est cochée
+    for (var f of formulaire){
+    var retournée = ''
+        if (document.getElementById("Europe").checked == true) {
+            retournée = 'oui';
+        }
+        else if (document.getElementById("Amérique").checked == true) {
+            retournée = 'oui';
+        }
+        else if (document.getElementById("Asie").checked == true) {
+            retournée = 'oui';
+        }
+        else if (document.getElementById("Océanie").checked == true) {
+            retournée = 'oui';
+        }
+        else if (document.getElementById("Afrique").checked == true) {
+            retournée = 'oui';
+        }
+        else {
+            retournée = 'non';
+        }
+    return retournée
+    }
+}
+
 function filtrage(){ //filtrer les images sur la page d'accueil
     for (var f of formulaire){ //f parcourt la liste formulaire
-        if(document.getElementById(f.id).checked == true){ //si la case est check
-            var lieu = f.ref //on récupère le continent associé à la case
-            for (var d of destinations){ //d parcourt la liste destinations
-                if (d.continent == lieu){ //si la destination est identitique à la case checkée
-                    document.getElementById(d.numero).style.display = "block"; //l'image s'affiche
-                }           
+        if (cochage()=='oui'){
+            if(document.getElementById(f.ref).checked == true){ //si la case est check
+                var lieu = f.ref //on récupère le continent associé à la case
+                for (var d of destinations){ //d parcourt la liste destinations
+                    if (d.continent == lieu){ //si la destination est identitique à la case checkée
+                        document.getElementById(d.numero).style.display = "block"; //l'image s'affiche
+                    }           
+                }
             }
+            if(document.getElementById(f.ref).checked == false){
+                var lieu = f.ref
+                for (var d of destinations){
+                    if (d.continent == lieu){
+                        document.getElementById(d.numero).style.display = "none";
+                    }           
+                }
+            }  
         }
-        if(document.getElementById(f.id).checked == false){
-            var lieu = f.ref
-            for (var d of destinations){
-                if (d.continent == lieu){
-                    document.getElementById(d.numero).style.display = "none";
-                }           
+        else {
+            for (d of destinations){
+                document.getElementById(d.numero).style.display = "block";
             }
+            
         }
     }
 }
