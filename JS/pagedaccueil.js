@@ -1,39 +1,48 @@
 var destinations = [
     {
-        "pays" : "Etats-Unis",
+        "ville" : "washington",
         "prix1": 600,
         "image":"../Images/EU.png",
         "hauteur" : 275,
         "largeur" : 500,
         "numero":0,
-        "continent": "Amérique"
+        "continent": "Amérique",
+        "petitdej" : "oui",
+        "meteo" : " : zone_meteo1"
     },
     {
-        "pays" : "Danemark",
+        "ville" : "copenhagen",
         "prix1": 300,
         "image":"../Images/DAN.jpg",
         "hauteur" : 275,
         "largeur" : 500,
         "numero":1,
-        "continent":"Europe"
+        "continent":"Europe",
+        "petitdej" : "non",
+        "meteo" : " : zone_meteo2"
+
     },
     {
-        "pays" : "Canada",
+        "ville" : "montreal",
         "prix1": 500,
         "image":"../Images/CAN.jpg",
         "hauteur" : 275,
         "largeur" : 500,
         "numero":2,
-        "continent":"Amérique"
+        "continent":"Amérique",
+        "petitdej" : "oui",
+        "meteo" : " : zone_meteo3"
     },
     {
-        "pays" : "Japon",
+        "ville" : "tokyo",
         "prix1": 650,
         "image": "../Images/JAP.jpg",
         "hauteur" : 275,
         "largeur" : 500,
         "numero":3,
-        "continent":"Asie"
+        "continent":"Asie",
+        "petitdej" : "non",
+        "meteo" : " : zone_meteo4"
     },
 ];
 
@@ -42,10 +51,12 @@ for (const v of destinations){
     let clone = document.importNode(template.content, true);
     newContent = clone.firstElementChild.innerHTML
         .replace(/{{image}}/g, v.image)
-        .replace(/{{pays}}/g, v.pays)
+        .replace(/{{ville}}/g, v.ville)
         .replace(/{{largeur}}/g, v.largeur)
         .replace(/{{hauteur}}/g, v.hauteur)
         .replace(/{{numero}}/g, v.numero)
+        .replace(/{{petitdej}}/g, v.petitdej)
+        .replace(/{{meteo}}/g, v.meteo)
 
     clone.firstElementChild.innerHTML=newContent;
     document.getElementById("idimages").appendChild(clone);   
@@ -106,6 +117,12 @@ var formulaire =[
         "id":"idvalueformlieu",
         "ref":"Océanie",
     },
+    {
+        "type":"checkbox",
+        "nom":"option",
+        "id":"idvalueform",
+        "ref":"petitdej"
+    }
 ]
 
 var template = document.querySelector("#listeformulaire");
@@ -152,6 +169,9 @@ function cochage(){ //pour afficher toutes les destinations si aucune case filtr
         else if (document.getElementById("Afrique").checked == true) {
             retournée = 'oui';
         }
+        else if (document.getElementById("petitdej").checked == true){
+            retournée ='oui'
+        }
         else {
             retournée = 'non';
         }
@@ -167,6 +187,10 @@ function filtrage(){ //filtrer les images sur la page d'accueil
                 for (var d of destinations){ //d parcourt la liste destinations
                     if (d.continent == lieu){ //si la destination est identitique à la case checkée
                         document.getElementById(d.numero).style.display = "block"; //l'image s'affiche
+                    if (d.petitdej == 'oui'){
+                        document.getElementById(d.numero).style.display = "block";
+                        console.log(d.numero)
+                    }
                     }           
                 }
             }
@@ -175,6 +199,9 @@ function filtrage(){ //filtrer les images sur la page d'accueil
                 for (var d of destinations){
                     if (d.continent == lieu){
                         document.getElementById(d.numero).style.display = "none";
+                    if (d.petitdej == 'non'){
+                        document.getElementById(d.numero).style.display = "none";
+                    }
                     }           
                 }
             }  
@@ -201,8 +228,44 @@ function function_scrolldown(){ //apparition ou non du bouton retour haut
 
 function function_none(){ //empêcher le bouton haut d'apparaitre au chargement de la page
     document.getElementById("boutonhaut").style.display="none";
+    document.getElementById("form").style.display = "none";
 }
 
 function function_top(){ //retour haut de page
     document.documentElement.scrollTop=0;
+}
+//Fonction météo avec l'utilisation de l'API OpenWeatherMap
+var n=0
+var appliAPI = function(data) {
+    while (n<4){
+        for (var d of destinations){
+            n+=1
+            meteo = d.meteo //meteo prend successivement chaque {{meteo}} 
+            meteo.innerHTML = "coucou"
+            //var element = d.meteo
+            //var zone = element[d.numero]
+            console.log(meteo)
+        }
+        
+        //n=n+1
+        //zone.innerHTML = "La temperature actuelle est de " + data.main.temp + " °C";
+    }
+    
+        //var zone = element[n]
+        //n=n+1
+        //element.innerHTML = data.main.temp
+}
+
+function appelAPI() {
+  //Boucle pour appeler la fonction à chaque ville.
+    for (var d of destinations){
+        ville = d.ville
+        var url = "https://api.openweathermap.org/data/2.5/weather?q=" + ville + "&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric"
+
+        //utilisation de Jquery
+        $.get(url, appliAPI).done(function() {
+        })
+        .always(function() {
+        });
+    }
 }

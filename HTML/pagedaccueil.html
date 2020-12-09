@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../CSS/pagedaccueil.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body onload="function_none()">
+    <body onload="function_none(); appelAPI()">
         <h1 id="top">
             <div class="titre" id="titre" onclick = "test_function()">e-line vacances, réservez vos vacances en un clic</div>
         </h1>
@@ -61,10 +61,10 @@
                         src="{{image}}"
                         width="{{largeur}}"
                         height="{{hauteur}}"
-                        alt= "{{pays}}"
+                        alt= "{{ville}}"                        
                         />
                         <div class="panneau">
-                            <div class="txtpanneau"><span>{{pays}}</span></div>
+                            <div class="txtpanneau"><span>{{ville}}{{meteo}}</span></div>
                         </div>
                     </a>
                     </div>
