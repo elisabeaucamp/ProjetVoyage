@@ -65,6 +65,41 @@ div.rechercher{
     text-align: center;
     cursor : pointer;
 }
+.boutonlogin{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonrechercher:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutoncontact:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonpanier:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonlogin:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonreservation:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
 
 .destinations{
     align-items: center;
@@ -136,26 +171,7 @@ div.formulaire{
     text-align: center;
     cursor : pointer;
 }
-.boutonrechercher:hover{
-    -webkit-transform: scale(1.3);
-    transform: scale(1.2);
-    transition: .3s ease-in-out;
-}
-.boutoncontact:hover{
-    -webkit-transform: scale(1.3);
-    transform: scale(1.2);
-    transition: .3s ease-in-out;
-}
-.boutonpanier:hover{
-    -webkit-transform: scale(1.3);
-    transform: scale(1.2);
-    transition: .3s ease-in-out;
-}
-.boutonreservation:hover{
-    -webkit-transform: scale(1.3);
-    transform: scale(1.2);
-    transition: .3s ease-in-out;
-}
+
 .boutonhaut{
     position: fixed;
     bottom:15px;
@@ -175,4 +191,8 @@ div.formulaire{
     padding : auto ;
     border : 10px solid ; 
     border-color : rgb(255,255,255);
+}
+.meteo{
+    color : rgb(36, 151, 228);
+    font-size : 120%;
 }
