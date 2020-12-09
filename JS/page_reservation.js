@@ -80,7 +80,8 @@ function getDonne () {
     var url = new URL(str);
     var num = url.searchParams.get("id");
     var donnee= function_getDestination(num);
- //    console.log(donnee.pays);   //test pour savoir comment ça marche
+ //    
+ // console.log(donnee.pays);   //test pour savoir comment ça marche
     document.getElementById("p02").innerHTML=donnee.pays;
 }
 
