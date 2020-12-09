@@ -1,6 +1,6 @@
 var destinations = [
     {
-        "ville" : "washington",
+        "ville" : "Washington",
         "prix1": 600,
         "image":"../Images/EU.png",
         "hauteur" : 275,
@@ -11,7 +11,7 @@ var destinations = [
         "meteo" : " : zone_meteo1"
     },
     {
-        "ville" : "copenhagen",
+        "ville" : "Copenhagen",
         "prix1": 300,
         "image":"../Images/DAN.jpg",
         "hauteur" : 275,
@@ -23,7 +23,7 @@ var destinations = [
 
     },
     {
-        "ville" : "montreal",
+        "ville" : "Montreal",
         "prix1": 500,
         "image":"../Images/CAN.jpg",
         "hauteur" : 275,
@@ -34,7 +34,7 @@ var destinations = [
         "meteo" : " : zone_meteo3"
     },
     {
-        "ville" : "tokyo",
+        "ville" : "Tokyo",
         "prix1": 650,
         "image": "../Images/JAP.jpg",
         "hauteur" : 275,
@@ -237,17 +237,15 @@ function function_top(){ //retour haut de page
 //Fonction météo avec l'utilisation de l'API OpenWeatherMap
 var n=0
 var appliAPI = function(data) {
+    //recherche la destination : data.name
     for (d of destinations){
-        d.meteo = data.main.temp
-
-        console.log()
-
-        document.getElementById("meteo").innerHTML = d.meteo
+        if(d.ville.toUpperCase()==data.name.toUpperCase()){
+            //ville trouvée
+            d.meteo = data.main.temp
+            document.getElementById("meteo"+d.numero).innerHTML = d.meteo + '°C'
+        }
+               
     }
-
-        
-        
-
     
 }
 
@@ -256,11 +254,46 @@ function appelAPI() {
     for (var d of destinations){
         ville = d.ville
         var url = "https://api.openweathermap.org/data/2.5/weather?q=" + ville + "&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric"
-
         //utilisation de Jquery
         $.get(url, appliAPI).done(function() {
         })
         .always(function() {
         });
+        console.log("fin")
     }
+}
+// fonction authentification
+$.getScript(pagelogin.js, function(){
+    alert('Le script a bien été chargé.');
+});
+
+function authentification(){
+    var eb = ['elisabeaucamp','eb'];
+    var ap = ['amandinepiccinai', 'ap'];
+    var gm = ['gregorymorel','gm'];
+    listeuser = [eb,ap,gm];
+    var login = document.getElementById("login").value;
+    var mdp = document.getElementById("mdp").value;
+    var retournée = 'non'
+    for (var i in [0,1,2]){
+        if (login == listeuser[i][0] && mdp == listeuser[i][1]){
+            document.location.href = "../HTML/pagedaccueil.html"
+            retournée = 'oui'
+        }
+        else {
+            alert("Identifiants incorrects")
+        }
+    }
+    return retournée
+}
+
+function TestLogin(){
+    if (authentification() == 'oui'){
+        document.getElementById('idimage').style.display = 'block';
+    }
+    else{
+        document.getElementById('idimage').style.display = 'none';
+        alert('Identifiez vous')
+    }
+    console.log('je suis appelée')
 }
