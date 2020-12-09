@@ -33,26 +33,46 @@ var destinations = [
     },
 ];
 
-var blocs = [
+var voyage = [
     {
-    //    "sst":"Date de départ",
+        "sst":"Date de départ",
         "type":"date",
         "name":"datedepart",
     },
     {
-    //    "sst":"Date d'arrivée",
+        "sst":"Date d'arrivée",
         "type":"date",
         "name":"datearrivee",
     },
+    {
+        "sst":"Nombre d'adultes",
+        "type":"text",
+        "name":"nbadulte",
+    },
+    {
+        "sst":"Nombre d'enfants (-12 ans)",
+        "type":"text",
+        "name":"nbenfant",
+    },
+    {
+        "sst":"Petit déjeuner",
+        "type":"checkbox",
+        "name":"ptitdej",
+    },
 ]
-var template = document.querySelector("#listeblocs");
-for (const v of blocs){
-    let clone = document.importNode(template.content, true);
+
+
+var template=document.querySelector("#listeVoyage");
+for (const v of voyage){
+    let clone=document.importNode(template.content, true);
     newContent = clone.firstElementChild.innerHTML
+        .replace(/{{sst}}/g, v.sst)
         .replace(/{{type}}/g, v.type)
-        .replace(/{{name}}/g, v.name)
-    //    .replace(/{{sst}}/g, v.sst)
+        .replace(/{{name}}/g, v.name);
+    clone.firstElementChild.innerHTML=newContent
+    document.body.appendChild(clone);
 }
+
 
 
 function getDonne () {
@@ -63,6 +83,7 @@ function getDonne () {
  //    console.log(donnee.pays);   //test pour savoir comment ça marche
     document.getElementById("p02").innerHTML=donnee.pays;
 }
+
 
 function function_getDestination(numer) {      //récupération de l'id dans le lien et des donnnes liés a l'id
     for (var d of destinations) {
@@ -88,8 +109,7 @@ function Affichprix () {
     var FPrix = donnee.prix1
     console.log(FPrix);
     console.log(document.getElementById("p05")) 
-//        FPrix=FPrix*Number(document.getElementsByName("nbadulte"))
-//    }
+//    FPrix=FPrix*Number(document.getElementsByName("nbadulte"))
     console.log(FPrix);
     document.getElementById("p03").innerHTML= FPrix
 
