@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../CSS/pagedaccueil.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body onload="function_none()">
+    <body onload="function_none(); appelAPI()">
         <h1 id="top">
             <div class="titre" id="titre" onclick = "test_function()">e-line vacances, réservez vos vacances en un clic</div>
         </h1>
@@ -57,15 +57,17 @@
                     <div class="img">
                     <a href="page_reservation.html?id={{numero}}">
                         <img
+                        id = "{{numero}}"
                         src="{{image}}"
                         width="{{largeur}}"
                         height="{{hauteur}}"
-                        alt= "{{pays}}"
+                        alt= "{{ville}}"                        
                         />
                         <div class="panneau">
-                            <div class="txtpanneau"><span>{{pays}}</span></div>
+                            <div class="txtpanneau"><span>{{ville}}</span></div>
+                            <div class="meteo" id = "meteo"><span>{{meteo}}</span></div>
                         </div>
-                    </a><br/><br/><br/>  
+                    </a>
                     </div>
                 </template>
                                       
@@ -85,10 +87,10 @@
                 </div>
                 <div class="formulaire"id="form">
                     <form id="formulaire" >
-                        <span>Filtres disponibles</span> <br/> <br/>  
+                        <div class = "titreform"><span>Filtres disponibles</span></div> <br/> <br/>  
                         <template id="listeformulaire">
                             <div>                                             
-                                <input type="{{type}}" name="{{nom}}" id="{{id}}"><span>{{ref}}</span>                   
+                                <input type="{{type}}" name="{{nom}}" id="{{ref}}" , onchange = "filtrage()"><span>{{ref}}</span>                   
                                 <br/><br/>
                             </div>
                         </template>
@@ -113,3 +115,4 @@
     </body>
     <script src="../JS/pagedaccueil.js"></script>
     </html>
+    
