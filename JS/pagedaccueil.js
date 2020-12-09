@@ -237,23 +237,18 @@ function function_top(){ //retour haut de page
 //Fonction météo avec l'utilisation de l'API OpenWeatherMap
 var n=0
 var appliAPI = function(data) {
-    while (n<4){
-        for (var d of destinations){
-            n+=1
-            meteo = d.meteo //meteo prend successivement chaque {{meteo}} 
-            meteo.innerHTML = "coucou"
-            //var element = d.meteo
-            //var zone = element[d.numero]
-            console.log(meteo)
-        }
-        
-        //n=n+1
-        //zone.innerHTML = "La temperature actuelle est de " + data.main.temp + " °C";
+    for (d of destinations){
+        d.meteo = data.main.temp
+
+        console.log()
+
+        document.getElementById("meteo").innerHTML = d.meteo
     }
+
+        
+        
+
     
-        //var zone = element[n]
-        //n=n+1
-        //element.innerHTML = data.main.temp
 }
 
 function appelAPI() {
