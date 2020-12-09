@@ -89,32 +89,25 @@
 
             <div class="bloc">
             <p class="legend">Voyage</p>   
-               <!-- 
+               <!--
                <p class="sst">Date de départ :</p>
                <input type="date" name="datedepart" required><br><br/>
-                <p class="sst">Date d'arrivée :</p>
+               <p class="sst">Date d'arrivée :</p>
                <input type="date" name="datearrivee" required><br><br/>
-               -->
-
-               <template id="listeblocs">
-                  <div>
-                  <!--   <p class="sst">{{sst}}</p> -->
-                     <input type="{{type}}" name="{{name}}" required>
-                  </div>
-                  
-               </template>
-
-               
-              
-
                <p class="sst">Nombre d'adultes :</p>
                <input type="text" name="nbadulte" required><br><br/>
-
                <p class="sst">Nombre d'enfants (-12 ans) :</p>
                <input type="text" name="nbenfant" required><br><br/>
                <p class="sst">Petit déjeuner :</p>
-               <input type="checkbox" name="ptitdejY"><br>
-               <br/>
+               <input type="checkbox" name="ptitdej"><br>
+               <br/> -->
+
+               <template id="listeVoyage">
+                  <div class="tp">
+                     <span>Voici la case {{sst}} de type {{type}} et de nom {{name}}</span>
+                  </div>
+               </template>
+
             </div>
 
             <div class="bloc">
@@ -129,4 +122,5 @@
          </div>
       </form>
    </body>
+   <script src="template.js"></script>
 </html>
