@@ -5,8 +5,10 @@
         <title>e-line</title>
         <link rel="stylesheet" href="../CSS/pagedaccueil.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../JS/pagedaccueil.js"></script>
+        <script type="text/javascript" src="../JS/pagecarte.js"></script>
     </head>
-    <body onload="function_none(); appelAPI(); TestLogin()">
+    <body onload="function_none(); appelAPI()">
         <h1 id="top">
             <div class="titre" id="titre" onclick = "test_function()">e-line vacances, réservez vos vacances en un clic</div>
         </h1>
@@ -61,6 +63,18 @@
                                 />
                             </h2>
                         </button>
+                    </a><br/><br/>
+                    <a href="pagecarte.html">
+                        <button class="boutoncarte">
+                            <h2>
+                                <img
+                                src="../Images/logocarte.png"
+                                width="50px"
+                                height="50px"
+                                alt="login"
+                                />
+                            </h2>
+                        </button>
                     </a>
                 </div>            
             </div>
@@ -106,6 +120,11 @@
                                 <br/><br/>
                             </div>
                         </template>
+                        <span>Budget</span><br/><br/>
+                        <span>0€</span><input type = 'range' min = '0' max = '1200' name = 'prix' id ='budget' onchange = "filtreprix()" oninput="AfficherRange()"><span>1200€</span>
+                        <br/><br/>
+                        <span>Votre budget maximal : </span><span id= 'AfficheRange'></span>
+                        <br/><br/>
                     </form>
                 </div>
                     </br>

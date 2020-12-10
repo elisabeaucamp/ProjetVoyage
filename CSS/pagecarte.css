@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(36, 151, 228);
+    color: white;
+}
+h1{
+    text-align: center;
+    color : rgb(36, 151, 228);
+    background:rgb(255,255,255) ;
+    border : 10px solid ; 
+    border-color : rgb(255,255,255);
+    cursor : pointer;
+}
+.boutoncontact{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius : 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonreservation{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonpanier{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutonlogin{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
+.boutoncontact:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonpanier:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonlogin:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonreservation:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.grid-container{
+    display:grid;
+    grid-template-columns: auto auto;
+    padding : 10px;
+}
+.washington{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 380px ; left  :180px;
+    cursor: pointer;
+}
+.washington:hover{
+    font-size: 110%;
+}
+.montreal{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 430px ; left  :220px;
+    cursor: pointer;
+}

@@ -2,12 +2,12 @@
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>e-line : login</title>
-        <link rel="stylesheet" href="../CSS/pagelogin.css">
-        <script type="text/javascript" src="../JS/pagelogin.js"></script>
+        <title>e-line : carte</title>
+        <link rel="stylesheet" href="../CSS/pagecarte.css">
+        <script type="text/javascript" src="../JS/pagecarte.js"></script>
     </head>
     <body>
-        <h1><span>Connectez-vous</span></h1>
+        <h1><span>Trouvez où partir sur notre carte !</span></h1>
         <div class = 'grid-container'>
             <div class="lien">
                 <a href="pagecontact.html">
@@ -59,13 +59,25 @@
                     </button>
                 </a>
             </div>
-            <form>
-                <span>Identifiant</span>
-                <input type = 'text' name = 'login' id = 'login'>
-                <span>Mot de passe</span>
-                <input type = 'text' name ='mdp' id = 'mdp' >
-                <br/><br/>
-                <input type = 'button' name = 'valider' value = 'valider' class ='btloginvalider' onclick='authentification()'>
-            </form>    
-        </div>        
+            <div class = 'imagecarte' >
+                <img id = 'imagecarte'
+                    src="../Images/worldmap.svg"
+                    width="800px"
+                    height="500px"
+                    alt="carte"
+                />
+                <!-- <template id = "listedestinations">
+                    <div>
+                    <a href="page_reservation.html?id={{numero}}">
+                        <div class = {{ville}}><span>{{ville}}</span></div>
+                    </a>
+                    </div>
+                </template> -->
+                <div class = 'washington'>
+                    <a href = "page_reservation.html?id=0">
+                        <span>washington</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </body>
