@@ -30,8 +30,6 @@ function getDonne () {
     var url = new URL(str);
     var num = url.searchParams.get("id");
     var donnee= function_getDestination(num);
- //    
- // console.log(donnee.pays);   //test pour savoir comment ça marche
     document.getElementById("p02").innerHTML=donnee.pays;
 }
 
@@ -45,8 +43,6 @@ function function_getDestination(numer) {      //récupération de l'id dans le 
     return null
 }
 
-//- Les enfants ne peuvent voyager sans être accompagnés d’un adulte. 
-//Toute modification dans le formulaire conduit à un re-calcul du prix. 
 
 function Affichprix () {
     var str = document.location.href;
@@ -99,5 +95,3 @@ function prixJours(){
     }
     return jours
 }
-
-// UTILISER LE TEST DE console.log ("coucou") POUR SAVOIR SI CA MARCHE
