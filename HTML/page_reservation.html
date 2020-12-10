@@ -10,117 +10,125 @@
 
    <body onload="getDonne() ; Affichprix()">
       <form action="page_reservation.html" method="GET" autocomplete="on">    
-         <div> 
-            <h1>Page de réservation</h1> 
-            <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances ! </p>
-            <p id=p02></p>
-         </div>
+            <div> 
+                <h1>Page de réservation</h1> 
+                <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances ! </p>
+                <p id=p02></p>
+            </div>
          
-         <div class="grid-container">
-            <div class="lien">
-               <a href="pagecontact.html">
-               <button class="boutoncontact">
-                   <h2>
-                       <img
-                       src="../Images/mail.png"
-                       width="50px"
-                       height="50px"
-                       alt="Mail"
-                       />
-                   </h2>
-               </button>
-               </a><br/><br/>   
-               <a href="pagedaccueil.html" >
-                   <button class="boutonreservation">
-                       <h2>                         
-                       <img
-                       src="../Images/maison.png"
-                       width="50px"
-                       height="50px"
-                       alt="Validation"
-                       />
-                       </h2>
-                   </button>
-               </a><br/><br/>
-               <a href="pagepanier.html">
-                   <button class="boutonpanier">
-                       <h2>
-                           <img
-                           src="../Images/panier.gif"
-                           width="50px"
-                           height="50px"
-                           alt="Panier"
-                           />
-                       </h2>
-                   </button>
-               </a><br/><br/>
-               <a href="pagelogin.html">
-                   <button class="boutonlogin">
-                       <h2>
-                           <img
-                           src="../Images/avatar.png"
-                           width="50px"
-                           height="50px"
-                           alt="login"
-                           />
-                       </h2>
-                   </button>
-               </a>
-           </div>            
-            <div class="bloc">  
-               <p class="legend">Prix</p></br>
-               <p id=p03></p>
-               <p id=p04>euros</p>
+            <div class="grid-container">
+                <div class="lien">
+                    <a href="pagecontact.html">
+                        <button class="boutoncontact">
+                            <h2>
+                                <img
+                                src="../Images/mail.png"
+                                width="50px"
+                                height="50px"
+                                alt="Mail"
+                                />
+                            </h2>
+                        </button>
+                    </a><br/><br/>   
+                    <a href="pagedaccueil.html" >
+                        <button class="boutonreservation">
+                            <h2>                         
+                                <img
+                                src="../Images/maison.png"
+                                width="50px"
+                                height="50px"
+                                alt="Validation"
+                                />
+                            </h2>
+                        </button>
+                    </a><br/><br/>
+                    <a href="pagepanier.html">
+                        <button class="boutonpanier">
+                            <h2>
+                                <img
+                                src="../Images/panier.gif"
+                                width="50px"
+                                height="50px"
+                                alt="Panier"
+                                />
+                            </h2>
+                        </button>
+                    </a><br/><br/>
+                    <a href="pagelogin.html">
+                        <button class="boutonlogin">
+                            <h2>
+                                <img
+                                src="../Images/avatar.png"
+                                width="50px"
+                                height="50px"
+                                alt="login"
+                                />
+                            </h2>
+                        </button>
+                    </a>
+                </div>            
+                <div class="bloc">  
+                    <p class="legend">Prix</p></br>
+                    <p id=prix></p>
+                    <p id=p04>euros</p>
+                </div>
+
+                <div class="bloc">
+                    <p class="legend">Identité</p>
+                    <p class="sst">Nom :</p>
+                    <input type="text" id= "lastname" name="lastname" autofocus required><br><br/>
+                    <p class="sst">Prénom :</p>
+                    <input type="text" id="firstname" name="firstname" required><br><br/>
+                    <p class="sst">Adresse mail :</p>
+                    <input type="email" id="email" name="email" placeholder="username@mail.com" required><br><br/>
+                    <p class="sst">Numéro de télephone :</p>
+                    <input type="text" id="tel" name="tel" inputmode="tel" maxlength="15" size="10" placeholder="06 00 00 00 00"><br/>
+                    <br/>
+                </div>
+
+                <div class="bloc">
+                    <p class="legend">Voyage</p>   
+                    <p class="sst">Date de départ :</p>
+                    <input type="date" id="datedepart" name="datedepart" onchange="Affichprix()" required><br><br/>
+                    <p class="sst">Date d'arrivée :</p>
+                    <input type="date" id="datearrivee" name="datearrivee" onchange="Affichprix()" required><br/>
+                    <p id="fausseDate"></p>
+                    <p class="sst">Nombre d'adultes :</p>
+                    <select name="nbadulte" id="nbadulte" onclick="Affichprix()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>   
+                        <option value="3">3</option>   
+                        <option value="4">4</option>   
+                        <option value="5">5</option>   
+                        <option value="6">6</option>   
+                        <option value="7">7</option>   
+                    </select>
+                    <p class="sst">Nombre d'enfants (-12 ans) :</p>
+                    <select name="nbenfant" id="nbenfant" onclick="Affichprix()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>   
+                        <option value="3">3</option>   
+                        <option value="4">4</option>   
+                        <option value="5">5</option>   
+                        <option value="6">6</option>   
+                        <option value="7">7</option>   
+                    </select>
+                    <p class="sst">Petit déjeuner :</p>
+                    <input type="checkbox" id="ptitdej" name="ptitdej" onclick="Affichprix()"><br>
+                    <br/>
+                </div>
+
+                <div class="bloc">
+                    <p class="legend">Renseignement</p>
+                    <textarea></textarea><br>
+                    <br/>
+                        <p class="legend">Confirmation</p>
+                        <input type=submit id="submit" name="submit">
+                        <input type="reset" name="suppr" onclick="Affichprix()"><br><br/> <!--Il faut appuyer deux fois pour tout faire disparaitre je ne sais pas pourquoi-->
+                    <br/>
+                </div>
             </div>
-
-            <div class="bloc">
-               <p class="legend">Identité</p>
-               <p class="sst">Nom :</p>
-               <input type="text" name="lastname" autofocus required><br><br/>
-               <p class="sst">Prénom :</p>
-               <input type="text" name="firstname" required><br><br/>
-               <p class="sst">Adresse mail :</p>
-               <input type="email" name="email" placeholder="username@mail.com" required><br><br/>
-               <p class="sst">Numéro de télephone :</p>
-               <input type="text" name="tel" inputmode="tel" maxlength="15" size="10" placeholder="06 00 00 00 00"><br/>
-               <br/>
-            </div>
-
-
-            <div class="bloc">
-            <p class="legend">Voyage</p>   
-               <!--
-               <p class="sst">Date de départ :</p>
-               <input type="date" name="datedepart" required><br><br/>
-               <p class="sst">Date d'arrivée :</p>
-               <input type="date" name="datearrivee" required><br><br/>
-               <p class="sst">Nombre d'adultes :</p>
-               <input type="text" name="nbadulte" required><br><br/>
-               <p class="sst">Nombre d'enfants (-12 ans) :</p>
-               <input type="text" name="nbenfant" required><br><br/>
-               <p class="sst">Petit déjeuner :</p>
-               <input type="checkbox" name="ptitdej"><br>
-               <br/> -->
-
-               <template id="listeVoyage">
-                  <div class="tp">
-                     <span>Voici la case {{sst}} de type {{type}} et de nom {{name}}</span>
-                  </div>
-               </template>
-
-            </div>
-
-            <div class="bloc">
-               <p class="legend">Renseignement</p>
-               <textarea></textarea><br>
-               <br/>
-               <p class="legend">Confirmation</p>
-               <input type=submit name="submit">
-               <input type="reset" name="suppr"><br><br/>
-               <br/>
-            </div>
-         </div>
       </form>
    </body>
-   <script src="template.js"></script>
 </html>
