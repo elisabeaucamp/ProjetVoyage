@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+    color : rgb(36, 151, 228);
+    background:rgb(255,255,255) ;
+    border : 10px solid ; 
+    border-color : rgb(255,255,255);
+    cursor : pointer;
+}
+
+body {
+    background-image: url("../Images/imagefond.jpg");
+    background-size: cover;
+    background-size: contain;
+    background-size: 120%;
+}
+
+#p01,#p02{
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+    text-align: center;
+}
+
+#cas1 {
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    text-align: center;
+}
+
+#nom,#prenom,#email,#numero,#départ,#arrivée,#nbadulte,#nbenfant,#petitdej{
+    color: rgb(233, 101, 61);
+    font-size: 100%;
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: auto auto auto auto;
+}
+.bloc {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgb(36, 151, 228) ; border-radius: 1%;
+    padding: 2% ;
+}

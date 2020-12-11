@@ -4,7 +4,8 @@
    <head>
         <meta charset ="UTF-8">
         <title>Page_recapitulative</title>
-    <script src="../JS/page_recapitulative.js"></script>
+        <script src="../JS/page_recapitulative.js"></script>
+        <link rel="stylesheet" href="../CSS/page_recapitulative.css">
    </head>
 
    <body onload="getUrl()">
@@ -12,29 +13,27 @@
             <h1>Récapitulatif de la commande</h1>
         </header>
         
-        <div>
-            <p>Module Identité</p>
-            <p>Votre nom est : </p>
-            <p id="nom"></p>
-            <p id="prenom"></p>
-            <p>Nous pouvons vous joindre grâce à</p>
-            <p>Votre e-mail :</p>
-            <p id="email"></p>
-            <p>Et votre téléphone :</p>
-            <p id="numero"></p>
-        </div>
-        <div>
-            <p>Module Voyage</p>
-            <p>Vous  partez en voyage du :</p>
-            <p id="départ"></p>
-            <p>Au :</p>
-            <p id="arrivée"></p>
-            <p>Vous serez un groupe de :</p>
-            <p id="nbadulte">adultes</p>
-            <p>Avec :</p>
-            <p id="nbenfant"> enfants</p>
-            <p>Vous avez pris l'option</p>
-            <p id="petitdej"></p>
-        </div>
+        <div class="grid-container">
+            <div class="bloc">
+                <p id="p01">Module Identité</p>
+                <p id="cas1">Votre nom est : </p>
+                <p id="nom"></p><p id="prenom"></p>
+                <p id=cas1>Nous pouvons vous joindre grâce à</p>
+                <p id=cas1>Votre e-mail :</p>
+                <p id="email"></p>
+                <p id=cas1>Et votre téléphone :</p>
+                <p id="numero"></p>
+            </div>
+            <div class="bloc">
+                <p id="p02">Module Voyage</p>
+                <p id=cas1>Vous partez en voyage du :</p> <p id="départ"></p>
+                <p id=cas1>Au :</p> <p id="arrivée"></p>
+                <p id=cas1>Vous serez un groupe de </p><p id="nbadulte"></p><p id=cas1>adutles.</p>
+                <p id=cas1>Avec </p><p id="nbenfant"></p><p id=cas1>enfants.</p>
+                <p id="petitdej"></p>
+                <a href="pagedaccueil.html"><input type="reset" id="Retour à la page d'acceuil" name="Retour à la page d'acceuil"></a>
+                
+            </div>
+        </div>    
    </body>
 </html>
