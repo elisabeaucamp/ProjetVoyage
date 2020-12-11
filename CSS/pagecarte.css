@@ -40,6 +40,16 @@ h1{
     text-align: center;
     cursor : pointer;
 }
+.boutonaccueil{
+    width: 80px;
+    height : 80px;
+    background-color: rgb(255,255,255);
+    color : rgb(36, 151, 228);
+    border-radius: 50%;
+    border : none;
+    text-align: center;
+    cursor : pointer;
+}
 .boutonlogin{
     width: 80px;
     height : 80px;
@@ -60,12 +70,17 @@ h1{
     transform: scale(1.2);
     transition: .3s ease-in-out;
 }
-.boutonlogin:hover{
+.boutonaccueil:hover{
     -webkit-transform: scale(1.3);
     transform: scale(1.2);
     transition: .3s ease-in-out;
 }
 .boutonreservation:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.boutonlogin:hover{
     -webkit-transform: scale(1.3);
     transform: scale(1.2);
     transition: .3s ease-in-out;
@@ -82,13 +97,47 @@ h1{
     bottom : 380px ; left  :180px;
     cursor: pointer;
 }
-.washington:hover{
-    font-size: 110%;
+.copenhagen{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 450px ; left  :360px;
+    cursor: pointer;
 }
 .montreal{
     font-size : 100%;
     color : white;
     position : relative ;
-    bottom : 430px ; left  :220px;
+    bottom : 440px ; left  :210px;
     cursor: pointer;
+}
+.tokyo{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 440px ; left  :660px;
+    cursor: pointer;
+}
+.dubai{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 400px ; left  :445px;
+    cursor: pointer;
+}
+.picherande{
+    font-size : 100%;
+    color : white;
+    position : relative ;
+    bottom : 495px ; left  :350px;
+    cursor: pointer;
+}
+.footer{
+    text-align: center;
+    font-size:130%;
+    color :rgb(36, 151, 228);
+    background:rgb(255,255,255) ;
+    padding : auto ;
+    border : 10px solid ; 
+    border-color : rgb(255,255,255);
 }

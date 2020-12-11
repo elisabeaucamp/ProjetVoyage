@@ -7,7 +7,9 @@
         <script type="text/javascript" src="../JS/pagecarte.js"></script>
     </head>
     <body>
-        <h1><span>Trouvez où partir sur notre carte !</span></h1>
+        <h1>
+            <span>Cliquez sur un continent pour le découvrir</span>
+        </h1>
         <div class = 'grid-container'>
             <div class="lien">
                 <a href="pagecontact.html">
@@ -47,10 +49,22 @@
                     </button>
                 </a><br/><br/>
                 <a href="pagedaccueil.html">
-                    <button class="boutonlogin">
+                    <button class="boutonaccueil">
                         <h2>
                             <img
                             src="../Images/maison.png"
+                            width="50px"
+                            height="50px"
+                            alt="login"
+                            />
+                        </h2>
+                    </button>
+                </a><br/><br/>
+                <a href="pagelogin.html">
+                    <button class="boutonlogin">
+                        <h2>
+                            <img
+                            src="../Images/avatar.png"
                             width="50px"
                             height="50px"
                             alt="login"
@@ -66,18 +80,55 @@
                     height="500px"
                     alt="carte"
                 />
-                <!-- <template id = "listedestinations">
-                    <div>
-                    <a href="page_reservation.html?id={{numero}}">
-                        <div class = {{ville}}><span>{{ville}}</span></div>
-                    </a>
-                    </div>
-                </template> -->
+                <!-- je voulais utiliser une template plutot que de tout réécrire
+                    mais visiblement la class n'accepte pas de changer de nom
+                    et donc je ne peux pas faire du css class par class pour
+                    disposer mes éléments sur ma carte
+                    je vous laisse mon code tout de même
+                <div  id = 'idimages'>
+                    <template id = "listedestinations">
+                        <div class = {{ville}}>
+                            <a href="page_reservation.html?id={{numero}}">
+                                <span>{{ville}}</span>
+                            </a>
+                        </div>
+                    </template>
+                </div> -->
                 <div class = 'washington'>
                     <a href = "page_reservation.html?id=0">
-                        <span>washington</span>
+                        <span>Washington</span>
+                    </a>
+                </div>
+                <div class = 'copenhagen'>
+                    <a href = "page_reservation.html?id=1">
+                        <span>Copenhagen</span>
+                    </a>
+                </div>
+                <div class = 'montreal'>
+                    <a href = "page_reservation.html?id=2">
+                        <span>Montreal</span>
+                    </a>
+                </div>
+                <div class = 'tokyo'>
+                    <a href = "page_reservation.html?id=3">
+                        <span>Tokyo</span>
+                    </a>
+                </div>
+                <div class = 'dubai'>
+                    <a href = "page_reservation.html?id=4">
+                        <span>Dubai</span>
+                    </a>
+                </div>
+                <div class = 'picherande'>
+                    <a href = "page_reservation.html?id=5">
+                        <span>Picherande</span>
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <span>Elisa Beaucamp et Amandine Piccinali</span>
+            </footer>
         </div>
     </body>

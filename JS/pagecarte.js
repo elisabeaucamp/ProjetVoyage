@@ -67,21 +67,24 @@ var destinations = [
         "meteo" : ""
     },
 ];
-var template = document.querySelector("#listedestinations");
-for (const v of destinations){
-    let clone = document.importNode(template.content, true);
-    newContent = clone.firstElementChild.innerHTML
-        .replace(/{{image}}/g, v.image)
-        .replace(/{{ville}}/g, v.ville)
-        .replace(/{{largeur}}/g, v.largeur)
-        .replace(/{{hauteur}}/g, v.hauteur)
-        .replace(/{{numero}}/g, v.numero)
-        .replace(/{{petitdej}}/g, v.petitdej)
-        .replace(/{{meteo}}/g, v.meteo)
+/* tentative de template
+function AuChargemet(){
+    var template = document.querySelector("#listedestinations");
+    for (const v of destinations){
+        let clone = document.importNode(template.content, true);
+        newContent = clone.firstElementChild.innerHTML
+            .replace(/{{image}}/g, v.image)
+            .replace(/{{ville}}/g, v.ville)
+            .replace(/{{largeur}}/g, v.largeur)
+            .replace(/{{hauteur}}/g, v.hauteur)
+            .replace(/{{numero}}/g, v.numero)
+            .replace(/{{petitdej}}/g, v.petitdej)
+            .replace(/{{meteo}}/g, v.meteo)
 
-    clone.firstElementChild.innerHTML=newContent;
-    document.getElementById("idimages").appendChild(clone);   
-}
+        clone.firstElementChild.innerHTML=newContent;
+        document.getElementById("idimages").appendChild(clone);   
+    }
+} */
 
 function findPos(el) { //récupère la position de la souris au clic
 	var x = y = 0;
@@ -98,18 +101,33 @@ function findPos(el) { //récupère la position de la souris au clic
 			
 window.onload = function(){ //récupération des coordonées de la souris au clic
     for (var d of destinations){
-        mondiv = document.getElementById();
+        mondiv = document.getElementById('imagecarte');
 	    mondiv.onclick = function(e) {//event au clic
             var ev = e || window.event;
             var pos = findPos(this);//on réupère la position
             var diffx = ev.clientX - pos.x;//récupère abscisse
             var diffy = ev.clientY - pos.y;//récupère ordonnée
             console.log(diffx,diffy)
-            if (63 <diffx<261 && 61<diffy<313){
-                console.log('Amérique')
+            if (diffx>63 && diffx<261 && diffy>61 && diffy<313){
+                //documentaire Etats Unis
+                document.location.href = 'https://www.youtube.com/watch?v=MKDG6WOww3o'
             }
-            else{
-                console.log('Pas Amérique')
+            else if (diffx>335 && diffx<487 && diffy>144 && diffy<350){
+                //documentaire Afrique
+                document.location.href = 'https://www.youtube.com/watch?v=3d1uvvJ99v8'
+            }
+            else if (diffx>351 && diffx<487 && diffy>46 && diffy<121){
+                //documentaire Europe
+                document.location.href = 'https://www.youtube.com/watch?v=gve1Le6L2TI'
+            }
+            else if (diffx>501 && diffx<766 && diffy>17 && diffy<211){
+                //documentaire Asie
+                document.location.href = 'https://www.youtube.com/watch?v=JXqylCI6NMw'
+            }
+            else if (diffx>584 && diffx<771 && diffy>227 && diffy<374){
+                //documentaire océanie
+                document.location.href = 'https://www.youtube.com/watch?v=xrpanVw4eCA'
+
             }
         }
     }

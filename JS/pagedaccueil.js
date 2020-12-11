@@ -184,6 +184,7 @@ function cochagepetitdej(){//récuère si petit-dej coché ou non
 }
 
 function filtrage(){ //filtrer les images sur la page d'accueil
+
     for (var f of formulaire){ //f parcourt la liste formulaire
         if (cochage()=='oui'){
             if(document.getElementById(f.ref).checked == true){ //si la case est check
@@ -192,9 +193,9 @@ function filtrage(){ //filtrer les images sur la page d'accueil
                     for (var d of destinations){ //d parcourt la liste destinations
                         if (d.continent == lieu && d.petitdej == 'oui'){ //si la destination est identitique à la case checkée et petitdej checké
                             console.log(d.ville + ' remplit les 2 critères')
-                            document.getElementById(d.numero).style.display = "block"; //l'image s'affiche
+                            document.getElementById('2').style.display = "block"; //l'image s'affiche
                         }
-                        else {
+                        else if(d.petitdej='non') {
                             document.getElementById(d.numero).style.display = "none";
                         }
                     }           

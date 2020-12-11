@@ -3,15 +3,87 @@
     <head>
         <meta charset="UTF-8">
         <title>e-line : Panier</title>
+        <link rel="stylesheet" href="../CSS/pagepanier.css  ">
     </head>
     <body>
         <h1>Panier actuel</h1>
-        <p>
-            Voyage : <br/>
-            Prix total :
-        </p>
-        <form action="pagepanier.html">
-            <input type="submit" name="soumettre" value="Payer mon voyage">
-            <button type="reset" name="réinitialisation" valure="reset">Vider mon panier</button>
-        </form>
+        <div class = 'grid-container'>
+            <div class="lien">
+                <a href="pagecontact.html">
+                <button class="boutoncontact">
+                    <h2>
+                        <img
+                        src="../Images/mail.png"
+                        width="50px"
+                        height="50px"
+                        alt="Mail"
+                        />
+                    </h2>
+                </button>
+                </a><br/><br/>   
+                <a href="page_reservation.html" >
+                    <button class="boutonreservation">
+                        <h2>                         
+                        <img
+                        src="../Images/validation.png"
+                        width="50px"
+                        height="50px"
+                        alt="Validation"
+                        />
+                        </h2>
+                    </button>
+                </a><br/><br/>
+                <a href="pagelogin.html">
+                    <button class="boutonpanier">
+                        <h2>
+                            <img
+                            src="../Images/avatar.png"
+                            width="50px"
+                            height="50px"
+                            alt="Panier"
+                            />
+                        </h2>
+                    </button>
+                </a><br/><br/>
+                <a href="pagedaccueil.html">
+                    <button class="boutonlogin">
+                        <h2>
+                            <img
+                            src="../Images/maison.png"
+                            width="50px"
+                            height="50px"
+                            alt="login"
+                            />
+                        </h2>
+                    </button>
+                </a><br/><br/>
+                <a href="pagecarte.html">
+                    <button class="boutoncarte">
+                        <h2>
+                            <img
+                            src="../Images/logocarte.png"
+                            width="50px"
+                            height="50px"
+                            alt="login"
+                            />
+                        </h2>
+                    </button>
+                </a><br/><br/>
+            </div>
+            <div class = 'form'>
+                <span>
+                    Voyage : <br/>
+                    Prix total :
+                </span>
+                <form action="pagepanier.html">
+                    <input type="submit" name="soumettre" value="Payer mon voyage">
+                    <button type="reset" name="réinitialisation" valure="reset">Vider mon panier</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <span>Elisa Beaucamp et Amandine Piccinali</span>
+            </footer>
+        </div>  
     </body>
