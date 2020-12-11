@@ -95,3 +95,36 @@ function prixJours(){
     }
     return jours
 }
+
+var InfoClients =[
+    {
+        "lastname":document.getElementById("lastname").value,
+        "firstname":document.getElementById("firstname").value,
+        "email":document.getElementById("email").value,
+        "tel":document.getElementById("tel").value,
+        "datedepart":document.getElementById("datedepart").value,
+        "datearrivee":document.getElementById("datearrivee").value,
+        "nbadulte":document.getElementById("nbadulte").value,
+        "nbenfant":document.getElementById("nbenfant").value,
+    },
+
+]
+
+
+
+var template = document.querySelector("#listeinfoclients");
+for (const v of InfoClients){
+    let clone = document.importNode(template.content, true);
+    newContent = clone.firstElementChild.innerHTML
+        .replace(/{{lastname}}/g, v.lastname)
+        .replace(/{{firstname}}/g, v.firstname)
+        .replace(/{{email}}/g, v.email)
+        .replace(/{{tel}}/g, v.tel)
+        .replace(/{{datedepart}}/g, v.datedepart)
+        .replace(/{{datearrivee}}/g, v.datearrivee)
+        .replace(/{{nbadulte}}/g, v.nbadulte)
+        .replace(/{{nbenfant}}/g, v.nbenfant)
+
+    clone.firstElementChild.innerHTML=newContent;
+    document.getElementById("idrecap").appendChild(clone);   
+}

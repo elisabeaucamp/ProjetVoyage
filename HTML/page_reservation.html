@@ -119,12 +119,23 @@
                     <br/>
                 </div>
 
-                <div class="bloc">
+                <div class="bloc" id="idrecap">
                     <p class="legend">Renseignement</p>
                     <textarea></textarea><br>
                     <br/>
                         <p class="legend">Confirmation</p>
-                        <input type=submit id="submit" name="submit">
+                        <template id="listeinfoclients">
+                            <div>
+                                <a href="page_recapitulative.html?lastname={{lastname}}&firstname={{firstname}}&email={{email}}&tel={{tel}}&datedepart={{datedepart}}&datearrivee={{datearrivee}}&nbadulte={{nbadulte}}&nbenfant={{nbenfant}}&submit=Envoyer" >
+                                    <!--<input type=submit id="submit" name="submit"> -->
+                                    <button class="boutonlogin">
+                                        <h2>submit</h2>
+                                    </button>
+                                </a> 
+                            </div>
+                           
+                        </template>
+                        
                         <input type="reset" name="suppr" onclick="Affichprix()"><br><br/> <!--Il faut appuyer deux fois pour tout faire disparaitre je ne sais pas pourquoi-->
                     <br/>
                 </div>
