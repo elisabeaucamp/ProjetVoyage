@@ -19,8 +19,18 @@ function getUrl () {
     document.getElementById("arrivée").innerHTML=datearrivee;
     document.getElementById("nbadulte").innerHTML=nbadulte;
     document.getElementById("nbenfant").innerHTML=nbenfant;
-    document.getElementById("petitdej").innerHTML=ptitdej;
-    console.log("nom");
+    document.getElementById("petitdej").innerHTML=petitDej(ptitdej);
+}
+
+function petitDej(ptitdej){
+    console.log("coucou");
+    if(ptitdej=="on"){
+        console.log("if");
+        return "Option Petit déjeuner"
+    }else{
+        console.log("else");
+        return null
+    }
 }
 /*
 lastname=Piccinali&firstname=Amandine&email=amandine.piccinali%40gmail.com&

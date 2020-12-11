@@ -9,7 +9,7 @@
    </head>
 
    <body onload="getDonne() ; Affichprix()">
-      <form action="page_reservation.html" method="GET" autocomplete="on">    
+      <form action="page_recapitulative.html" method="GET" autocomplete="on">    
             <div> 
                 <h1>Page de réservation</h1> 
                 <p id=p01> Veuillez remplir le formulaire pour réserver vos vacances ! </p>
@@ -69,7 +69,7 @@
                 </div>            
                 <div class="bloc">  
                     <p class="legend">Prix</p></br>
-                    <p id=prix></p>
+                    <p id="prix"></p>
                     <p id=p04>euros</p>
                 </div>
 
@@ -89,9 +89,9 @@
                 <div class="bloc">
                     <p class="legend">Voyage</p>   
                     <p class="sst">Date de départ :</p>
-                    <input type="date" id="datedepart" name="datedepart" onchange="Affichprix()" required><br><br/>
+                    <input type="date" id="datedepart" name="datedepart" onchange="Affichprix() ;  " required><br><br/>
                     <p class="sst">Date d'arrivée :</p>
-                    <input type="date" id="datearrivee" name="datearrivee" onchange="Affichprix()" required><br/>
+                    <input type="date" id="datearrivee" name="datearrivee" onchange="Affichprix() ;  " required><br/>
                     <p id="fausseDate"></p>
                     <p class="sst">Nombre d'adultes :</p>
                     <select name="nbadulte" id="nbadulte" onclick="Affichprix()">
@@ -104,7 +104,7 @@
                         <option value="7">7</option>   
                     </select>
                     <p class="sst">Nombre d'enfants (-12 ans) :</p>
-                    <select name="nbenfant" id="nbenfant" onclick="Affichprix()">
+                    <select name="nbenfant" id="nbenfant" onclick="Affichprix() ">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>   
@@ -119,13 +119,13 @@
                     <br/>
                 </div>
 
-                <div class="bloc">
+                <div class="bloc" id="idrecap">
                     <p class="legend">Renseignement</p>
                     <textarea></textarea><br>
                     <br/>
                         <p class="legend">Confirmation</p>
-                        <input type=submit id="submit" name="submit">
-                        <input type="reset" name="suppr" onclick="Affichprix()"><br><br/> <!--Il faut appuyer deux fois pour tout faire disparaitre je ne sais pas pourquoi-->
+                        <input type="submit" id="submit" name="submit">    
+                        <input type="reset" name="suppr" onclick="Affichprix()"><br><br/> <!--Il faut appuyer deux fois pour tout faire disparaitre-->
                     <br/>
                 </div>
             </div>

@@ -23,6 +23,19 @@ var destinations = [
         "image": "../Images/JAP.jpg",
         "numero":3
     },
+    {
+        "pays" : "Partez à Dubai",
+        "prix1": 1100,
+        "image": "../Images/Dubai.jpg",
+        "numero":4
+    },
+    {
+        "pays" : "Partez à Picherande",
+        "prix1": 30,
+        "image": "../Images/Picherande.jpeg",
+        "numero":5
+    },
+
 ];
 
 function getDonne () {
